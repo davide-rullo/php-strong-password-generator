@@ -2,15 +2,22 @@
 $passwordLength = (int)$_GET['length'];
 var_dump($passwordLength);
 
-$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-$password = '';
+function getRandomPassword($passwordLength)
 
-for ($i = 0; $i < $passwordLength; $i++) {
-    $index = rand(0, strlen($characters) - 1);
-    $password .= $characters[$index];
+{
+
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $password = '';
+
+    for ($i = 0; $i < $passwordLength; $i++) {
+        $index = rand(0, strlen($characters) - 1);
+        $password .= $characters[$index];
+    }
+    return $password;
+    var_dump($password);
 }
 
-var_dump($password);
+
 
 ?>
 
@@ -45,7 +52,8 @@ var_dump($password);
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        <h3>Password generata: <?php echo $password ?></h3>
+        <h3>Password generata: </h3>
+        <p><?php echo getRandompassword($passwordLength); ?></p>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
