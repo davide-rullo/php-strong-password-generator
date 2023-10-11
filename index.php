@@ -1,6 +1,17 @@
 <?php
-$passwordLength = $_GET['length'];
-var_dump($passwordLength)
+$passwordLength = (int)$_GET['length'];
+var_dump($passwordLength);
+
+$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+$password = '';
+
+for ($i = 0; $i < $passwordLength; $i++) {
+    $index = rand(0, strlen($characters) - 1);
+    $password .= $characters[$index];
+}
+
+var_dump($password);
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +39,7 @@ var_dump($passwordLength)
 
                 </div>
                 <div class="col">
-                    <input type="text" name="length" class="form-control" id="passwordLength" aria-describedby="emailHelp">
+                    <input type="text" name="length" class="form-control" id="passwordLengthId" aria-describedby="emailHelp">
                 </div>
 
             </div>
