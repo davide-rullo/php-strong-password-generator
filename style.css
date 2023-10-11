@@ -1,0 +1,11 @@
+body {
+    background: #1f2833;
+    color: #66fcf1;
+}
+
+form {
+    background-color: #efefef;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: black;
+}
